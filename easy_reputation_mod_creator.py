@@ -20,9 +20,9 @@ with open(os.path.join('Data', 'reputation_change.xml'), 'r') as repfile:
 for row in data['database']['table']['rows']['row']:
     change = float(row['@change'])
     if change > 0:
-        row['@change'] = str(change * 2.0)
+        row['@change'] = str(change * 20.0)
     elif change < 0:
-        row['@change'] = str(change * 0.5)
+        row['@change'] = str(change * 0.01)
 
 resfile = result_dir/'Libs'/'Tables'/'rpg'/f'{str(Path(edited_name).stem)}__{result_dir.name.lower()}.xml'
 os.makedirs(str(resfile.parent), exist_ok=True)
